@@ -44,8 +44,8 @@ DB_CONFIG = {
     'host': os.getenv('DB_HOST', '192.168.120.206'),
     'port': int(os.getenv('DB_PORT', 5432)),
     'database': os.getenv('DB_NAME', 'postgres'),
-    'user': os.getenv('DB_USER', ''),
-    'password': os.getenv('DB_PASSWORD', '') # 비밀이랍니다 ㅎ
+    'user': os.getenv('DB_USER', 'liam'),
+    'password': os.getenv('DB_PASSWORD', '') # 뭘까용 ~?
 }
 
 def get_db_connection():

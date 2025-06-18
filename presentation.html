@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,11 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
+        
         body {
             font-family: 'Inter', sans-serif;
         }
-
+        
         .slide {
             min-height: 100vh;
             display: flex;
@@ -22,11 +21,11 @@
             justify-content: center;
             padding: 2rem;
         }
-
+        
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-
+        
         .code-block {
             background: #1e293b;
             color: #e2e8f0;
@@ -35,21 +34,21 @@
             font-family: 'Courier New', monospace;
             overflow-x: auto;
         }
-
+        
         .tech-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        
         .tech-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
-
+        
         .flow-step {
             position: relative;
             padding-left: 2rem;
         }
-
+        
         .flow-step::before {
             content: '';
             position: absolute;
@@ -59,7 +58,7 @@
             width: 2px;
             background: #3b82f6;
         }
-
+        
         .flow-step::after {
             content: '';
             position: absolute;
@@ -70,24 +69,24 @@
             background: #3b82f6;
             border-radius: 50%;
         }
-
+        
         .stats-card {
             background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
             border-left: 4px solid #3b82f6;
         }
-
+        
         .mermaid {
             display: flex;
             justify-content: center;
         }
-
+        
         .navigation {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
             z-index: 1000;
         }
-
+        
         .slide-counter {
             position: fixed;
             bottom: 2rem;
@@ -100,7 +99,6 @@
         }
     </style>
 </head>
-
 <body class="bg-gray-50">
     <!-- Slide Counter -->
     <div class="slide-counter">
@@ -150,7 +148,7 @@
     <section class="slide bg-white" id="slide-2">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">타겟 사용자</h2>
-
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <div class="tech-card bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
                     <div class="flex items-center mb-4">
@@ -160,8 +158,7 @@
                     <p class="text-blue-700">유사한 NFT 발견 및 투자 결정 지원</p>
                 </div>
 
-                <div
-                    class="tech-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
+                <div class="tech-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
                     <div class="flex items-center mb-4">
                         <i data-lucide="palette" class="w-8 h-8 text-purple-600 mr-3"></i>
                         <h3 class="text-xl font-semibold text-purple-800">NFT 크리에이터</h3>
@@ -169,8 +166,7 @@
                     <p class="text-purple-700">시장 트렌드 분석 및 작품 차별화</p>
                 </div>
 
-                <div
-                    class="tech-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
+                <div class="tech-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
                     <div class="flex items-center mb-4">
                         <i data-lucide="trending-up" class="w-8 h-8 text-green-600 mr-3"></i>
                         <h3 class="text-xl font-semibold text-green-800">투자자/트레이더</h3>
@@ -178,8 +174,7 @@
                     <p class="text-green-700">민팅 패턴 분석을 통한 투자 전략</p>
                 </div>
 
-                <div
-                    class="tech-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
+                <div class="tech-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
                     <div class="flex items-center mb-4">
                         <i data-lucide="store" class="w-8 h-8 text-orange-600 mr-3"></i>
                         <h3 class="text-xl font-semibold text-orange-800">마켓플레이스</h3>
@@ -220,28 +215,28 @@
     <section class="slide bg-gradient-to-br from-gray-50 to-gray-100" id="slide-3">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">시스템 아키텍처</h2>
-
+            
             <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
                 <div class="mermaid">
                     graph TB
-                    A[👤 사용자] --> B[🌐 Next.js Frontend]
-                    B --> C[🔌 API Routes]
-                    C --> D[🐍 Python CLIP Service]
-                    C --> E[🗄️ PostgreSQL Database]
-                    C --> F[📊 R Analytics Engine]
-
-                    D --> G[🧠 CLIP AI Model]
-                    E --> H[📋 NFT Features Table]
-                    E --> I[📄 NFT Metadata Table]
-                    F --> J[📈 Statistical Analysis]
-                    F --> K[📊 Chart Generation]
-
-                    style A fill:#e1f5fe
-                    style B fill:#f3e5f5
-                    style C fill:#e8f5e8
-                    style D fill:#fff3e0
-                    style E fill:#fce4ec
-                    style F fill:#e0f2f1
+                        A[👤 사용자] --> B[🌐 Next.js Frontend]
+                        B --> C[🔌 API Routes]
+                        C --> D[🐍 Python CLIP Service]
+                        C --> E[🗄️ PostgreSQL Database]
+                        C --> F[📊 R Analytics Engine]
+                        
+                        D --> G[🧠 CLIP AI Model]
+                        E --> H[📋 NFT Features Table]
+                        E --> I[📄 NFT Metadata Table]
+                        F --> J[📈 Statistical Analysis]
+                        F --> K[📊 Chart Generation]
+                        
+                        style A fill:#e1f5fe
+                        style B fill:#f3e5f5
+                        style C fill:#e8f5e8
+                        style D fill:#fff3e0
+                        style E fill:#fce4ec
+                        style F fill:#e0f2f1
                 </div>
             </div>
 
@@ -255,7 +250,7 @@
                         <li>• Recharts Visualization</li>
                     </ul>
                 </div>
-
+                
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-lg font-semibold mb-3 text-purple-600">Backend Services</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
@@ -265,7 +260,7 @@
                         <li>• R Statistical Engine</li>
                     </ul>
                 </div>
-
+                
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-lg font-semibold mb-3 text-green-600">AI/Analytics</h3>
                     <ul class="text-sm text-gray-600 space-y-1">
@@ -283,85 +278,82 @@
     <section class="slide bg-white" id="slide-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">NFT 유사도 검색 프로세스</h2>
-
+            
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div class="space-y-6">
                     <div class="flow-step">
                         <h3 class="text-lg font-semibold mb-2 text-blue-600">1. 이미지 업로드</h3>
                         <p class="text-gray-600">사용자가 Frontend에 이미지 업로드</p>
                     </div>
-
+                    
                     <div class="flow-step">
                         <h3 class="text-lg font-semibold mb-2 text-blue-600">2. API 전송</h3>
                         <p class="text-gray-600">Next.js API Routes로 이미지 데이터 전송</p>
                     </div>
-
+                    
                     <div class="flow-step">
                         <h3 class="text-lg font-semibold mb-2 text-blue-600">3. CLIP 서비스 호출</h3>
                         <p class="text-gray-600">Python FastAPI CLIP 서비스 호출</p>
                     </div>
-
+                    
                     <div class="flow-step">
                         <h3 class="text-lg font-semibold mb-2 text-blue-600">4. 특징점 추출</h3>
                         <p class="text-gray-600">CLIP 모델로 512차원 벡터 생성</p>
                     </div>
-
+                    
                     <div class="flow-step">
                         <h3 class="text-lg font-semibold mb-2 text-blue-600">5. 데이터베이스 조회</h3>
                         <p class="text-gray-600">PostgreSQL에서 모든 NFT 특징점 조회</p>
                     </div>
-
+                    
                     <div class="flow-step">
                         <h3 class="text-lg font-semibold mb-2 text-blue-600">6. 유사도 계산</h3>
                         <p class="text-gray-600">코사인 유사도로 벡터 간 거리 계산</p>
                     </div>
-
+                    
                     <div class="flow-step">
                         <h3 class="text-lg font-semibold mb-2 text-blue-600">7. 결과 필터링</h3>
                         <p class="text-gray-600">임계값 이상 결과 필터링 및 정렬</p>
                     </div>
-
+                    
                     <div class="flow-step">
                         <h3 class="text-lg font-semibold mb-2 text-blue-600">8. 결과 반환</h3>
                         <p class="text-gray-600">메타데이터와 함께 유사 NFT 목록 반환</p>
                     </div>
                 </div>
-
+                
                 <div class="bg-gray-50 p-6 rounded-xl">
                     <h3 class="text-xl font-semibold mb-4 text-gray-800">핵심 기술 상세</h3>
-
+                    
                     <div class="space-y-4">
                         <div class="stats-card p-4 rounded-lg">
                             <h4 class="font-semibold text-blue-600 mb-2">CLIP 모델</h4>
                             <p class="text-sm text-gray-600">OpenAI의 Vision Transformer 기반 이미지-텍스트 임베딩 모델</p>
                         </div>
-
+                        
                         <div class="stats-card p-4 rounded-lg">
                             <h4 class="font-semibold text-purple-600 mb-2">512차원 벡터</h4>
                             <p class="text-sm text-gray-600">이미지의 시각적 특징을 512개 숫자로 압축 표현</p>
                         </div>
-
+                        
                         <div class="stats-card p-4 rounded-lg">
                             <h4 class="font-semibold text-green-600 mb-2">코사인 유사도</h4>
                             <p class="text-sm text-gray-600">벡터 간 각도를 이용한 유사도 측정 (0~1)</p>
                         </div>
-
+                        
                         <div class="stats-card p-4 rounded-lg">
                             <h4 class="font-semibold text-orange-600 mb-2">실시간 처리</h4>
                             <p class="text-sm text-gray-600">수천 개 NFT와 실시간 비교 분석</p>
                         </div>
                     </div>
-
+                    
                     <div class="mt-6 code-block">
                         <div class="text-sm">
                             <div class="text-green-400"># 코사인 유사도 계산</div>
-                            <div class="text-blue-400">def</div>
-                            <div class="text-yellow-400">calculate_similarity</div>(features1, features2):
+                            <div class="text-blue-400">def</div> <div class="text-yellow-400">calculate_similarity</div>(features1, features2):
                             <div class="ml-4">features1 = features1 / np.linalg.norm(features1)</div>
                             <div class="ml-4">features2 = features2 / np.linalg.norm(features2)</div>
-                            <div class="ml-4">
-                                <div class="text-purple-400">return</div> np.dot(features1, features2)
-                            </div>
+                            <div class="ml-4"><div class="text-purple-400">return</div> np.dot(features1, features2)</div>
                         </div>
                     </div>
                 </div>
@@ -373,7 +365,7 @@
     <section class="slide bg-gradient-to-br from-blue-50 to-indigo-100" id="slide-5">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">R 분석 엔진 상세</h2>
-
+            
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <h3 class="text-2xl font-semibold mb-4 text-blue-600">R 사용 위치 및 역할</h3>
@@ -408,7 +400,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="bg-white p-6 rounded-xl shadow-lg">
                     <h3 class="text-2xl font-semibold mb-4 text-purple-600">사용된 R 패키지</h3>
                     <div class="space-y-3">
@@ -450,41 +442,41 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="bg-white p-6 rounded-xl shadow-lg">
                 <h3 class="text-2xl font-semibold mb-6 text-gray-800">주요 R 함수 사용 현황</h3>
-
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div>
                         <h4 class="text-lg font-semibold mb-3 text-blue-600">📊 데이터 처리</h4>
                         <div class="code-block text-xs">
-                            <div>read.csv() <span class="text-gray-400"># CSV 읽기</span></div>
-                            <div>as.Date() <span class="text-gray-400"># 날짜 변환</span></div>
-                            <div>as.numeric() <span class="text-gray-400"># 숫자 변환</span></div>
+                            <div>read.csv()      <span class="text-gray-400"># CSV 읽기</span></div>
+                            <div>as.Date()       <span class="text-gray-400"># 날짜 변환</span></div>
+                            <div>as.numeric()    <span class="text-gray-400"># 숫자 변환</span></div>
                             <div>complete.cases() <span class="text-gray-400"># 결측값 제거</span></div>
-                            <div>sum(), mean() <span class="text-gray-400"># 통계 계산</span></div>
+                            <div>sum(), mean()   <span class="text-gray-400"># 통계 계산</span></div>
                         </div>
                     </div>
-
+                    
                     <div>
                         <h4 class="text-lg font-semibold mb-3 text-purple-600">📈 시각화 (ggplot2)</h4>
                         <div class="code-block text-xs">
-                            <div>ggplot() <span class="text-gray-400"># 플롯 생성</span></div>
-                            <div>geom_line() <span class="text-gray-400"># 선 그래프</span></div>
-                            <div>geom_point() <span class="text-gray-400"># 점 그래프</span></div>
-                            <div>geom_smooth() <span class="text-gray-400"># 추세선</span></div>
+                            <div>ggplot()        <span class="text-gray-400"># 플롯 생성</span></div>
+                            <div>geom_line()     <span class="text-gray-400"># 선 그래프</span></div>
+                            <div>geom_point()    <span class="text-gray-400"># 점 그래프</span></div>
+                            <div>geom_smooth()   <span class="text-gray-400"># 추세선</span></div>
                             <div>theme_minimal() <span class="text-gray-400"># 테마</span></div>
                         </div>
                     </div>
-
+                    
                     <div>
                         <h4 class="text-lg font-semibold mb-3 text-green-600">📅 날짜 처리</h4>
                         <div class="code-block text-xs">
-                            <div>floor_date() <span class="text-gray-400"># 날짜 내림</span></div>
-                            <div>group_by() <span class="text-gray-400"># 그룹 집계</span></div>
-                            <div>summarise() <span class="text-gray-400"># 요약 통계</span></div>
-                            <div>date_labels() <span class="text-gray-400"># 날짜 라벨</span></div>
-                            <div>comma_format() <span class="text-gray-400"># 천단위 구분</span></div>
+                            <div>floor_date()    <span class="text-gray-400"># 날짜 내림</span></div>
+                            <div>group_by()      <span class="text-gray-400"># 그룹 집계</span></div>
+                            <div>summarise()     <span class="text-gray-400"># 요약 통계</span></div>
+                            <div>date_labels()   <span class="text-gray-400"># 날짜 라벨</span></div>
+                            <div>comma_format()  <span class="text-gray-400"># 천단위 구분</span></div>
                         </div>
                     </div>
                 </div>
@@ -496,7 +488,7 @@
     <section class="slide bg-white" id="slide-6">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">R로 생성되는 분석 결과</h2>
-
+            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
                     <h3 class="text-xl font-semibold mb-4 text-blue-800">📊 생성되는 차트 종류</h3>
@@ -519,7 +511,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
                     <h3 class="text-xl font-semibold mb-4 text-green-800">📈 계산되는 통계 지표</h3>
                     <div class="space-y-3">
@@ -556,32 +548,21 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="bg-gray-50 p-6 rounded-xl">
                 <h3 class="text-xl font-semibold mb-4 text-gray-800">R 코드 예시 - 트렌드 차트 생성</h3>
                 <div class="code-block">
                     <div class="text-sm">
                         <div class="text-green-400"># 메인 트렌드 차트 생성</div>
-                        <div><span class="text-blue-400">main_plot</span> <- <span
-                                class="text-yellow-400">ggplot</span>(data, <span class="text-purple-400">aes</span>(x =
-                                date, y = mint_count)) +</div>
-                        <div class="ml-4"><span class="text-yellow-400">geom_line</span>(color = <span
-                                class="text-green-300">"#3b82f6"</span>, size = 1.2, alpha = 0.8) +</div>
-                        <div class="ml-4"><span class="text-yellow-400">geom_point</span>(color = <span
-                                class="text-green-300">"#1e40af"</span>, size = 2, alpha = 0.6) +</div>
-                        <div class="ml-4"><span class="text-yellow-400">geom_smooth</span>(method = <span
-                                class="text-green-300">"loess"</span>, se = TRUE, color = <span
-                                class="text-green-300">"#ef4444"</span>) +</div>
-                        <div class="ml-4"><span class="text-yellow-400">labs</span>(title = <span
-                                class="text-green-300">"NFT Minting Activity Over Time"</span>) +</div>
+                        <div><span class="text-blue-400">main_plot</span> <- <span class="text-yellow-400">ggplot</span>(data, <span class="text-purple-400">aes</span>(x = date, y = mint_count)) +</div>
+                        <div class="ml-4"><span class="text-yellow-400">geom_line</span>(color = <span class="text-green-300">"#3b82f6"</span>, size = 1.2, alpha = 0.8) +</div>
+                        <div class="ml-4"><span class="text-yellow-400">geom_point</span>(color = <span class="text-green-300">"#1e40af"</span>, size = 2, alpha = 0.6) +</div>
+                        <div class="ml-4"><span class="text-yellow-400">geom_smooth</span>(method = <span class="text-green-300">"loess"</span>, se = TRUE, color = <span class="text-green-300">"#ef4444"</span>) +</div>
+                        <div class="ml-4"><span class="text-yellow-400">labs</span>(title = <span class="text-green-300">"NFT Minting Activity Over Time"</span>) +</div>
                         <div class="ml-4"><span class="text-yellow-400">theme_minimal</span>() +</div>
-                        <div class="ml-4"><span class="text-yellow-400">scale_x_date</span>(date_labels = <span
-                                class="text-green-300">"%m/%d"</span>, date_breaks = <span class="text-green-300">"1
-                                week"</span>)</div>
+                        <div class="ml-4"><span class="text-yellow-400">scale_x_date</span>(date_labels = <span class="text-green-300">"%m/%d"</span>, date_breaks = <span class="text-green-300">"1 week"</span>)</div>
                         <div class="mt-2 text-green-400"># PNG 파일로 저장</div>
-                        <div><span class="text-yellow-400">ggsave</span>(<span
-                                class="text-green-300">"public/charts/minting_trends.png"</span>, plot = main_plot,
-                            width = 14, height = 8)</div>
+                        <div><span class="text-yellow-400">ggsave</span>(<span class="text-green-300">"public/charts/minting_trends.png"</span>, plot = main_plot, width = 14, height = 8)</div>
                     </div>
                 </div>
             </div>
@@ -592,7 +573,7 @@
     <section class="slide bg-gradient-to-br from-purple-50 to-pink-100" id="slide-7">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">기술 스택 상세</h2>
-
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
                     <div class="text-center mb-4">
@@ -622,7 +603,7 @@
                         </li>
                     </ul>
                 </div>
-
+                
                 <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
                     <div class="text-center mb-4">
                         <i data-lucide="server" class="w-12 h-12 mx-auto text-purple-600 mb-3"></i>
@@ -647,7 +628,7 @@
                         </li>
                     </ul>
                 </div>
-
+                
                 <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
                     <div class="text-center mb-4">
                         <i data-lucide="brain" class="w-12 h-12 mx-auto text-green-600 mb-3"></i>
@@ -672,7 +653,7 @@
                         </li>
                     </ul>
                 </div>
-
+                
                 <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
                     <div class="text-center mb-4">
                         <i data-lucide="bar-chart-3" class="w-12 h-12 mx-auto text-orange-600 mb-3"></i>
@@ -698,10 +679,10 @@
                     </ul>
                 </div>
             </div>
-
+            
             <div class="bg-white p-8 rounded-xl shadow-lg">
                 <h3 class="text-2xl font-semibold mb-6 text-center text-gray-800">주요 기능 및 특징</h3>
-
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="text-center">
                         <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -715,7 +696,7 @@
                             <li>• 상세 특징점 분석</li>
                         </ul>
                     </div>
-
+                    
                     <div class="text-center">
                         <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i data-lucide="trending-up" class="w-8 h-8 text-purple-600"></i>
@@ -728,7 +709,7 @@
                             <li>• JavaScript 대체 엔진</li>
                         </ul>
                     </div>
-
+                    
                     <div class="text-center">
                         <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i data-lucide="file-text" class="w-8 h-8 text-green-600"></i>
@@ -750,7 +731,7 @@
     <section class="slide bg-gradient-to-br from-green-50 to-blue-100" id="slide-8">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12 text-gray-800">비즈니스 가치 및 차별점</h2>
-
+            
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <h3 class="text-2xl font-semibold mb-6 text-green-600">🎯 사용자 가치</h3>
@@ -762,7 +743,7 @@
                                 <p class="text-sm text-green-700">수동 검색 대신 AI 자동 매칭으로 즉시 유사 NFT 발견</p>
                             </div>
                         </div>
-
+                        
                         <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-lg">
                             <i data-lucide="target" class="w-6 h-6 text-blue-600 mt-1"></i>
                             <div>
@@ -770,7 +751,7 @@
                                 <p class="text-sm text-blue-700">통계적 근거 기반 의사결정 지원</p>
                             </div>
                         </div>
-
+                        
                         <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-lg">
                             <i data-lucide="lightbulb" class="w-6 h-6 text-purple-600 mt-1"></i>
                             <div>
@@ -778,7 +759,7 @@
                                 <p class="text-sm text-purple-700">트렌드 파악을 통한 투자 전략 수립</p>
                             </div>
                         </div>
-
+                        
                         <div class="flex items-start gap-4 p-4 bg-orange-50 rounded-lg">
                             <i data-lucide="shield" class="w-6 h-6 text-orange-600 mt-1"></i>
                             <div>
@@ -788,7 +769,7 @@
                         </div>
                     </div>
                 </div>
-
+                
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <h3 class="text-2xl font-semibold mb-6 text-blue-600">🚀 기술적 차별점</h3>
                     <div class="space-y-4">
@@ -799,7 +780,7 @@
                                 <p class="text-sm text-blue-700">OpenAI CLIP 활용한 고정밀 이미지 분석</p>
                             </div>
                         </div>
-
+                        
                         <div class="flex items-start gap-4 p-4 bg-green-50 rounded-lg">
                             <i data-lucide="zap" class="w-6 h-6 text-green-600 mt-1"></i>
                             <div>
@@ -807,7 +788,7 @@
                                 <p class="text-sm text-green-700">수천 개 NFT와 실시간 비교 분석</p>
                             </div>
                         </div>
-
+                        
                         <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-lg">
                             <i data-lucide="layers" class="w-6 h-6 text-purple-600 mt-1"></i>
                             <div>
@@ -815,7 +796,7 @@
                                 <p class="text-sm text-purple-700">모듈화된 아키텍처로 기능 확장 용이</p>
                             </div>
                         </div>
-
+                        
                         <div class="flex items-start gap-4 p-4 bg-orange-50 rounded-lg">
                             <i data-lucide="globe" class="w-6 h-6 text-orange-600 mt-1"></i>
                             <div>
@@ -826,29 +807,29 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="bg-white p-8 rounded-xl shadow-lg">
                 <h3 class="text-2xl font-semibold mb-6 text-center text-gray-800">📊 성능 지표</h3>
-
+                
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
                         <div class="text-3xl font-bold text-blue-600 mb-2">512</div>
                         <div class="text-sm text-blue-700">차원 특징점</div>
                         <div class="text-xs text-gray-600 mt-1">고정밀 이미지 분석</div>
                     </div>
-
+                    
                     <div class="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
                         <div class="text-3xl font-bold text-green-600 mb-2">&lt;2s</div>
                         <div class="text-sm text-green-700">응답 시간</div>
                         <div class="text-xs text-gray-600 mt-1">실시간 검색 결과</div>
                     </div>
-
+                    
                     <div class="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
                         <div class="text-3xl font-bold text-purple-600 mb-2">95%+</div>
                         <div class="text-sm text-purple-700">정확도</div>
                         <div class="text-xs text-gray-600 mt-1">유사도 매칭 정확도</div>
                     </div>
-
+                    
                     <div class="text-center p-6 bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg">
                         <div class="text-3xl font-bold text-orange-600 mb-2">10K+</div>
                         <div class="text-sm text-orange-700">NFT 데이터</div>
@@ -863,10 +844,9 @@
     <section class="slide gradient-bg text-white" id="slide-9">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-12">🚀 향후 발전 방향</h2>
-
+            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
                     <div class="text-center mb-4">
                         <i data-lucide="brain" class="w-12 h-12 mx-auto text-yellow-300 mb-3"></i>
                         <h3 class="text-xl font-semibold">AI 모델 고도화</h3>
@@ -878,9 +858,8 @@
                         <li>• 실시간 모델 업데이트</li>
                     </ul>
                 </div>
-
-                <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
                     <div class="text-center mb-4">
                         <i data-lucide="activity" class="w-12 h-12 mx-auto text-green-300 mb-3"></i>
                         <h3 class="text-xl font-semibold">실시간 데이터</h3>
@@ -892,9 +871,8 @@
                         <li>• 알림 시스템</li>
                     </ul>
                 </div>
-
-                <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
                     <div class="text-center mb-4">
                         <i data-lucide="heart" class="w-12 h-12 mx-auto text-pink-300 mb-3"></i>
                         <h3 class="text-xl font-semibold">추천 시스템</h3>
@@ -906,9 +884,8 @@
                         <li>• 트렌드 예측</li>
                     </ul>
                 </div>
-
-                <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
                     <div class="text-center mb-4">
                         <i data-lucide="dollar-sign" class="w-12 h-12 mx-auto text-yellow-300 mb-3"></i>
                         <h3 class="text-xl font-semibold">가격 예측</h3>
@@ -920,9 +897,8 @@
                         <li>• 포트폴리오 최적화</li>
                     </ul>
                 </div>
-
-                <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
                     <div class="text-center mb-4">
                         <i data-lucide="users" class="w-12 h-12 mx-auto text-blue-300 mb-3"></i>
                         <h3 class="text-xl font-semibold">소셜 기능</h3>
@@ -934,9 +910,8 @@
                         <li>• 소셜 트레이딩</li>
                     </ul>
                 </div>
-
-                <div
-                    class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
+                
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm p-6 rounded-xl border border-white border-opacity-20">
                     <div class="text-center mb-4">
                         <i data-lucide="smartphone" class="w-12 h-12 mx-auto text-purple-300 mb-3"></i>
                         <h3 class="text-xl font-semibold">모바일 앱</h3>
@@ -949,7 +924,7 @@
                     </ul>
                 </div>
             </div>
-
+            
             <div class="text-center">
                 <h3 class="text-2xl font-semibold mb-6">감사합니다!</h3>
                 <div class="flex justify-center gap-8 text-lg">
@@ -957,18 +932,25 @@
                         <i data-lucide="mail" class="w-6 h-6"></i>
                         <span>contact@nftanalytics.com</span>
                     </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                        <span>github.com/nft-analytics</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="globe" class="w-6 h-6"></i>
+                        <span>nftanalytics.com</span>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
     <script>
         // Initialize Lucide icons
         lucide.createIcons();
-
+        
         // Initialize Mermaid
-        mermaid.initialize({
+        mermaid.initialize({ 
             startOnLoad: true,
             theme: 'default',
             themeVariables: {
@@ -980,48 +962,48 @@
                 tertiaryColor: '#ffffff'
             }
         });
-
+        
         // Slide navigation
         let currentSlide = 1;
         const totalSlides = 9;
-
+        
         function showSlide(n) {
             // Hide all slides
             for (let i = 1; i <= totalSlides; i++) {
                 document.getElementById(`slide-${i}`).style.display = 'none';
             }
-
+            
             // Show current slide
             document.getElementById(`slide-${n}`).style.display = 'flex';
-
+            
             // Update counter
             document.getElementById('current-slide').textContent = n;
-
+            
             // Update button states
             document.getElementById('prev-btn').disabled = n === 1;
             document.getElementById('next-btn').disabled = n === totalSlides;
         }
-
+        
         function nextSlide() {
             if (currentSlide < totalSlides) {
                 currentSlide++;
                 showSlide(currentSlide);
             }
         }
-
+        
         function prevSlide() {
             if (currentSlide > 1) {
                 currentSlide--;
                 showSlide(currentSlide);
             }
         }
-
+        
         // Event listeners
         document.getElementById('next-btn').addEventListener('click', nextSlide);
         document.getElementById('prev-btn').addEventListener('click', prevSlide);
-
+        
         // Keyboard navigation
-        document.addEventListener('keydown', function (e) {
+        document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault();
                 nextSlide();
@@ -1030,16 +1012,15 @@
                 prevSlide();
             }
         });
-
+        
         // Initialize
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             showSlide(1);
             document.getElementById('total-slides').textContent = totalSlides;
         });
-
+        
         // Auto-advance slides (optional)
         // setInterval(nextSlide, 30000); // 30 seconds
     </script>
 </body>
-
 </html>

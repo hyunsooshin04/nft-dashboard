@@ -1,5 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server"
 
+// 동적 렌더링 강제 설정
+export const dynamic = "force-dynamic"
+
 export async function POST(request: NextRequest) {
   try {
     console.log("Starting similarity search...")
